@@ -1,7 +1,5 @@
 //colors vars
 $color-primary: #ffff;
-$color-primary-blue: #3498DB;
-$color-primary-green: #1ABC9C;
 $color-primary-dark: #232323;
 $color-primary-dark-grey: #303030;
 $color-primary-light-grey: #8f8f8f;
@@ -33,6 +31,7 @@ body {
   height: 100%; 
   color: $color-primary-dark-grey;
   font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -41,12 +40,17 @@ body {
     &__title {
         
         font-size: 4.5rem;
-        font-weight: bold;
+        font-weight: 900;
         margin: 2rem 0rem 2rem 2rem;
        
     }
     
 
+}
+
+
+p {
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 
@@ -63,7 +67,7 @@ body {
 
 
 .hero {
-     background-image: linear-gradient(to right, rgba($color-primary-dark-grey, 0.5), rgba($color-primary-dark-grey, 0.5)), url(../img/pandhander-king.jpg);
+     background-image: linear-gradient(to right, rgba($color-primary-dark-grey, 0.3), rgba($color-primary-dark-grey, 0.7)), url(../img/pandhander-king.jpg);
      background-size: cover;
      background-position: top;
      height: 60rem;
@@ -195,8 +199,8 @@ body {
        padding: 1rem 2rem;
     }
     &__text {
-        font-size: 1.4rem;
-        padding: 2rem;
+        font-size: 1.8rem;
+        padding: 1rem 2rem;
     }
 
 }
@@ -207,8 +211,8 @@ body {
       text-decoration: none;
       padding: 1.2rem 3rem;
       display: inline-block;
-      border: 1px solid $color-primary-dark;
-     
+      border: 1px solid transparent;
+      border-radius: 20px;
       position: relative;
       font-size: 1.8rem;
    
@@ -218,18 +222,21 @@ body {
 }
 
 &:hover  {
-   
-    background-color: $color-primary-dark;
+    transition: all .5s;
+    background-color: transparent;
     border: 1px solid $color-primary;
     color: $color-primary; 
     &::after {
     opacity: 0;
+    transition: all .5s;
+
 
 }
 }
 
 &:active, &:focus {
     outline:none;
+    transition: all .5s;
      
 }
 
@@ -244,3 +251,71 @@ body {
 }
 
 }
+
+
+.footer {
+    
+    height: 10rem;
+ 
+    text-align: center;
+    display: flex;
+    margin: 0 auto 2rem auto;
+    &__socials {
+        display: flex;
+        margin: 0 auto 2rem auto;
+        align-items: center;
+    
+      
+        
+       
+        .btn-social {
+            
+            display: inline-flex;
+            width: 2.3rem;
+            height: 2.3rem;
+            font-size: 2.3rem;
+            justify-content: center;
+            align-items: center;
+            padding: 1.8rem;
+            
+
+        
+        } 
+    }
+}
+
+
+.btn-social:hover {
+    color: rgba($color-primary-dark-grey, 0.7)
+}
+
+//media quiries
+
+@media only screen and (min-width : 220px) and (max-width : 730px) {
+
+    .hero {
+        text-align: center;
+
+        &__text-box {
+             position: absolute;
+             top: 80%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             text-align: center;
+        }
+          
+    }
+
+
+
+     .projects__row {
+         flex-direction: column;
+         .projects__box {
+        margin: 2rem 1rem;
+        flex: 0 2 100%;
+        max-width: 100%;
+             
+         }
+     }
+
+    }    
